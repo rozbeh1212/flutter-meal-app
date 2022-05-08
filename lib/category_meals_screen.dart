@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
@@ -7,6 +9,10 @@ class CategoryMealsScreen extends StatelessWidget {
   CategoryMealsScreen(this.categoryId, this.categoryTitle);
   @override
   Widget build(BuildContext context) {
+    final routeArgs = //
+        ModalRoute.of(context).settings.arguments as Map<String, String>;
+    final categoryId = routeArgs['id'];
+    final categoryTitle = routeArgs['title'];
     return Scaffold(
       appBar: AppBar(
         title:  Text(categoryTitle),

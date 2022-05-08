@@ -10,15 +10,13 @@ class CategoryItem extends StatelessWidget {
   const CategoryItem(this.id ,this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push(
-      // push is a method that takes a MaterialPageRoute object as an argument.
-      MaterialPageRoute(
-        builder: (_) {
-          return CategoryMealsScreen(id, title);
-        },
-      ),
+    Navigator.of(ctx).pushNamed(
+      '/category-meals',
+      arguments: {
+        'id': id,
+        'title': title,
+      },
     );
-  }
 
   @override
   Widget build(BuildContext context) {
