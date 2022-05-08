@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
-  final String categoryId;
-  final String categoryTitle;
+  static const routeName = '/category-meals';
+  // final String categoryId;
+  // final String categoryTitle;
 
-  CategoryMealsScreen(this.categoryId, this.categoryTitle);
+  CategoryMealsScreen();
   @override
   Widget build(BuildContext context) {
     final routeArgs = //
@@ -15,10 +16,16 @@ class CategoryMealsScreen extends StatelessWidget {
     final categoryTitle = routeArgs['title'];
     return Scaffold(
       appBar: AppBar(
-        title:  Text(categoryTitle),
+        title: Text(categoryTitle),
       ),
-      body: Center(
-        child: Text('CategoryMeals'),
+      body: ListView.builder(
+        itemBuilder: (ctx, index) {
+          return Card(
+            child: Container(
+              padding: const EdgeInsets.all(20),
+            ),
+          );
+        },
       ),
     );
   }
