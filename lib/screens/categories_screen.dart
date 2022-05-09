@@ -4,27 +4,29 @@ import '../dummy_data.dart';
 import '../widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DeliMeals'),
+        title: const Text('DeliMeal'),
       ),
       body: GridView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(25),
         children: DUMMY_CATEGORIES
             .map(
-              (catData) => CategoryItem(catData.id ,catData.title, catData.color),
+              (catData) => CategoryItem(
+                    catData.id,
+                    catData.title,
+                    catData.color,
+                  ),
             )
             .toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            // SliverGridDelegateWithMaxCrossAxisExtent is a widget that allows you to set the max cross axis extent of the grid.
-            maxCrossAxisExtent: 200,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
       ),
     );
   }
