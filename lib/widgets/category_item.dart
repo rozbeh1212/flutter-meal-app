@@ -7,9 +7,9 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final Color color;
 
-  CategoryItem(this.id, this.title, this.color); // constructor for CategoryItem class (id, title, color)
+  CategoryItem(this.id, this.title, this.color);
 
-  void selectCategory(BuildContext ctx) { // selectCategory method that takes in a context and navigates to the CategoryMealsScreen with the id and title of the category selected as arguments to the CategoryMealsScreen 
+  void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
       CategoryMealsScreen.routeName,
       arguments: {
@@ -20,7 +20,7 @@ class CategoryItem extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) { // build method that returns a Card widget with the title and color of the category selected 
+  Widget build(BuildContext context) {
     return InkWell(
       onTap: () => selectCategory(context),
       splashColor: Theme.of(context).primaryColor,
@@ -29,7 +29,7 @@ class CategoryItem extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Text(
           title,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.title,
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
